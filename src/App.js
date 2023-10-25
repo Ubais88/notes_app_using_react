@@ -1,8 +1,11 @@
 import React from 'react'
+import NotesPage from "./Pages/NotesPage" ;
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <NotesPage/>
+    </div>
   )
 }
 

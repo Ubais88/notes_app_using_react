@@ -1,0 +1,72 @@
+.main{
+    width: 22vw;
+    height: 100vh;
+}
+
+.heading{
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 0 0 1rem;
+}
+.container{
+    /* padding: 1.5rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.creategrpbtn{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: 0.5rem 1.2rem;
+    letter-spacing: 0.1em;
+    margin: 1.5rem 0 .4rem 0;
+    border: none;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+    border-radius: 4rem;
+    cursor: pointer;
+    
+    
+    >.btnText{
+        font-family: Roboto;
+        font-size: 1rem;
+    }
+}
+
+.group,.select{
+    margin-left: 4rem;
+    width: 22vw;
+    display: flex;
+    align-items: center;
+    margin-top: 1.3rem;
+    gap: 1.2rem;
+    cursor: pointer;
+
+    >.grpLogo,.selectgrpLogo{
+        background-color: lightcoral;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.3rem;
+        padding: .8rem;
+    }
+
+    >.grpName,.selectgrpName{
+        font-family: Roboto;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+    }
+}
+
+.select{
+    background: #F7ECDC;
+    box-sizing: content-box;
+    padding: 0.5rem;
+    border-radius: 1rem 0 0 1rem;
+}
