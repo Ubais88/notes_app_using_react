@@ -1,10 +1,20 @@
 import React from 'react'
 import Style from "../Styles/Modal.module.css"
 
-const Modal = () => {
+const Modal = ({setModalOpen}) => {
+
+    const handleoutsideClick = (e) => {
+        if(e.target.id === "close") 
+            setModalOpen(false)       
+    }
+
   return (
-    <div className={Style.modal}>
-        <div className={Style.content}>
+    <div 
+        className={Style.modal} 
+        onClick={handleoutsideClick}
+        id='close'
+    >
+       <div className={Style.content}>
             <p className={Style.heading}>Create New Notes group</p>
             <div className={Style.rowsContainer}>
                 <div className={Style.inputContainer}>
@@ -26,7 +36,7 @@ const Modal = () => {
             <div className={Style.btncontainer}>
                 <button className={Style.btn}>Create</button>
             </div>
-        </div>
+         </div>
     </div>
   )
 }

@@ -1,19 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from "../Styles/SideBar.module.css"
 import {FaPlus} from "react-icons/fa"
+import Modal from './Modal'
 
 const SideBar = () => {
+  const [modalOpen , setModalOpen] = useState(false);
+
+
   return (
     <div className={Style.main}>
       <p className={Style.heading}>Pocket Notes</p>
 
       <div className={Style.container}>
 
-        <button className={Style.creategrpbtn}>
+        <button className={Style.creategrpbtn} onClick={()=>setModalOpen(!modalOpen)}>
           <FaPlus size={14} />
           <p className={Style.btnText}>Create Notes Group</p>
         </button>
-{/* special add */}
+
         <div className={Style.allGroups}>
           <div className={Style.select}>
               <div className={Style.selectgrpLogo}>AN</div>
@@ -57,6 +61,10 @@ const SideBar = () => {
           
         </div>
       </div>
+    {
+      modalOpen && <Modal setModalOpen={setModalOpen}/>
+    }
+      
     </div>
   )
 }

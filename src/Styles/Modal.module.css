@@ -1,15 +1,22 @@
 
 .modal{
+    position: absolute;
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0 ,0, 0, 0.5);
+    top: 0;
+    z-index: 1;
 }
 
 .content{
     display: flex;
     flex-direction: column;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
 
     >.heading{
         font-family: Roboto;
@@ -80,7 +87,7 @@
             font-family: Roboto;
             font-size: 1rem;
             font-weight: 400;
-            padding: .3rem 1.3rem;
+            padding: .3rem 1.7rem;
             border-radius: 0.5rem;
             cursor: pointer;
         }
