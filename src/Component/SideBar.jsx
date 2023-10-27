@@ -27,6 +27,33 @@ const SideBar = () => {
               <div className={Style.grpLogo}>AJ</div>
               <p className={Style.grpName}>Ajhar Notes</p>
           </div>
+
+          <div className={Style.group}>
+              <div className={Style.selectgrpLogo}>AN</div>
+              <p className={Style.selectgrpName}>Apne Notes</p>
+          </div>
+          <div className={Style.group}>
+              <div className={Style.grpLogo}>UN</div>
+              <p className={Style.grpName}>Ubais Notes</p>
+          </div>
+          <div className={Style.group}>
+              <div className={Style.grpLogo}>AJ</div>
+              <p className={Style.grpName}>Ajhar Notes</p>
+          </div>
+
+
+          <div className={Style.group}>
+              <div className={Style.selectgrpLogo}>AN</div>
+              <p className={Style.selectgrpName}>Apne Notes</p>
+          </div>
+          <div className={Style.group}>
+              <div className={Style.grpLogo}>UN</div>
+              <p className={Style.grpName}>Ubais Notes</p>
+          </div>
+          <div className={Style.group}>
+              <div className={Style.grpLogo}>AJ</div>
+              <p className={Style.grpName}>Ajhar Notes</p>
+          </div>
           
         </div>
       </div>
