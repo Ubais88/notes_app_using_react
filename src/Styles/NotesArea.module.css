@@ -1,5 +1,4 @@
 .main{
-    /* background-color: antiquewhite; */
     width: 100vw;
 }
 
@@ -12,15 +11,14 @@
 
 
     >.logo{
-        /* background-color: lightcoral; */
         height: 55px;
         width: 55px;
         border-radius: 50%;
         color: white;
-        font-size: 1.3rem;
-        padding: .9rem;
-        text-align: center;
-        object-fit: contain;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-left: 1rem;
     }
 

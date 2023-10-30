@@ -2,6 +2,12 @@
     /* width: 20vw; */
     height: 100%;
 }
+@media (max-width: 480px) {
+    .main{
+        height: 100vh;
+
+    }
+  }
 
 .heading{
     font-family: Roboto;
@@ -39,17 +45,15 @@
 
 .allGroups{
     height:84vh;
+    width: 24vw;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-left: -2rem;
+    margin-left: -3rem;
 }
 
-/* .group{
-    padding: 0.2rem;
-} */
 
 .group,.select{
     margin-left: 4rem;
@@ -65,10 +69,10 @@
         width: 55px;
         border-radius: 50%;
         color: white;
-        font-size: 1.3rem;
-        padding: .9rem;
-        text-align: center;
-        object-fit: contain;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     >.grpName,.selectgrpName{

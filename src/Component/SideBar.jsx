@@ -61,9 +61,11 @@ const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName}) =
                     className={Style.selectgrpLogo} 
                     style={{ backgroundColor: names[0].colorName}} 
                   >
-                    {names[0].groupName.slice(0,2).toUpperCase()}
+                    <p>{names[0].groupName.slice(0,2).toUpperCase()}</p>
                   </div>
-                  <p className={Style.selectgrpName}>{names[0].groupName}</p>
+                  <p className={Style.selectgrpName}>
+                    {names[0].groupName}
+                  </p>
                 </div>
               ))
           )}

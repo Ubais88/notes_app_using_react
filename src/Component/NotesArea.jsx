@@ -71,7 +71,9 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
             <div 
                 className={Style.logo}
                 style={{ backgroundColor: selectedGroupColor}}
-            >{selectedGroupName.slice(0,2).toUpperCase()}</div>
+            >
+                <p className={Style.logoletter}>{selectedGroupName.slice(0,2).toUpperCase()}</p>
+            </div>
             <p className={Style.logoText}>{selectedGroupName}</p>
         </nav>
 

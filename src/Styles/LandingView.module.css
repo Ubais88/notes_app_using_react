@@ -2,6 +2,11 @@
     width: 80vw;
     background: #F7ECDC;
 }
+@media (max-width: 480px) {
+    .main{
+        display: none;
+    }
+  }
 
 .top{
     height: 100vh;

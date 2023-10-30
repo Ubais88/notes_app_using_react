@@ -111,3 +111,36 @@
     margin-left: 3px;
     margin-top: 3px;
 }
+
+
+@media (max-width: 480px){
+    .modal{
+        padding: 0, .5rem;
+    }
+    .content{
+        padding: .5rem 1rem;
+    }
+    .heading{
+        letter-spacing: 0em;
+    }
+    .rowsContainer{
+        margin: 0rem;
+    }
+    .inputContainer ,.colorContainer{
+        gap: 1rem;
+    }
+    .name,.colortext{
+        font-size: 1rem;
+        letter-spacing: 0em;
+    }
+    .nameInput{
+        padding: 0.5rem 1.5rem ;
+        width: 99%;
+    }
+    .colors{   
+        >*{
+            height: 30px;
+            width: 30px;
+        }
+    }
+}
