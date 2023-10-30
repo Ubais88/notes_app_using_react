@@ -41,8 +41,8 @@ const Modal = ({setModalOpen, groupData, setGroupData}) => {
             setModalOpen(false)
         }
         else{
-            name.length >=2 ? ("") : ( newError.name = 'Minimum Name length must be Two Characters')
-            colorname ? ("") : ( newError.colorname = "Select AnyOne Colour")
+            name.length < 2 && ( newError.name = 'Minimum Two Characters Needed')
+            !colorname && (newError.colorname = "Select AnyOne Colour")
         }
         { Object.keys(newError).length && setError(newError) }
     }
