@@ -19,7 +19,7 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
     const currentTime = () => {
         let hours = time.getHours();
         let minutes = time.getMinutes();
-        let ampm = hours >= 12 ? 'PM' : 'AM';
+        let ampm = hours >= 12 ? 'Pm' : 'Am';
         { hours < 10 && (hours = "0"+hours) }
         { hours > 12 && (hours = hours - 12) }
         { minutes < 10 && (minutes = "0"+minutes) }
@@ -54,14 +54,6 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
             )
         }
     }
-    
-    // useEffect(() => {
-    //     {
-    //         newNote !== 0 && ( 
-    //             newNote && (localStorage.setItem(selectedGroupName , JSON.stringify(newNote))) 
-    //         )
-    //     }
-    // },[newNote]);
 
     useEffect(() => {
         const savedNotes = JSON.parse(localStorage.getItem(selectedGroupName)) || [];
