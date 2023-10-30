@@ -12,7 +12,7 @@
 
 
     >.logo{
-        background-color: lightcoral;
+        /* background-color: lightcoral; */
         border-radius: 50%;
         margin-left: 1rem;
         color: white;
@@ -38,21 +38,27 @@
 
     >.table{
         padding: 1rem 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        >.row{
+
+        >.tbody{
             display: flex;
+            flex-direction: column;
             gap: 2rem;
 
-            >.rowData{
-                font-family: Roboto;
-                font-size: 1.1rem;
-                font-weight: 400;
-                letter-spacing: 0.01em;
+            >.row{
+                display: flex;
+                gap: 2rem;
 
-                >.time{
-                    width: max-content;
+                >.rowData{
+                    font-family: Roboto;
+                    color: black;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    letter-spacing: 0.01em;
+
+                    >.time{
+                        color:#353535;
+                        width: max-content;
+                    }
                 }
             }
         }
