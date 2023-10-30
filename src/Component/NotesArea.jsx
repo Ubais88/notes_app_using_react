@@ -3,7 +3,6 @@ import Style from "../Styles/NotesArea.module.css"
 import {IoSendSharp} from "react-icons/io5"
 
 const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
-
     // for typing 
     const [note , setNote] = useState("");
 
@@ -20,10 +19,11 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
         let hours = time.getHours();
         let minutes = time.getMinutes();
         let ampm = hours >= 12 ? 'Pm' : 'Am';
-        { hours < 10 && (hours = "0"+hours) }
-        { hours > 12 && (hours = hours - 12) }
-        { minutes < 10 && (minutes = "0"+minutes) }
-       
+        { 
+            hours > 12 && (hours = hours - 12) ,
+            hours < 10 && (hours = "0"+hours) ,
+            minutes < 10 && (minutes = "0"+minutes) 
+        }      
         return `${hours}:${minutes} ${ampm}`
     }
 
@@ -52,6 +52,13 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
         }
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault(); // Prevent the Enter key from adding a newline
+          handleOnSave();
+        }
+      };
+
     useEffect(() => {
         const savedNotes = JSON.parse(localStorage.getItem(selectedGroupName)) || [];
         setNewNote(savedNotes);
@@ -64,7 +71,7 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
             <div 
                 className={Style.logo}
                 style={{ backgroundColor: selectedGroupColor}}
-            >AN</div>
+            >{selectedGroupName.slice(0,2).toUpperCase()}</div>
             <p className={Style.logoText}>{selectedGroupName}</p>
         </nav>
 
@@ -96,6 +103,7 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
                 placeholder='Enter your text here...........' 
                 value={note}
                 className={Style.textarea}
+                onKeyDown={handleKeyDown}
                 onChange={handleOnChange}
             />
             <IoSendSharp size={25} className={Style.sendicon} onClick={handleOnSave}/>

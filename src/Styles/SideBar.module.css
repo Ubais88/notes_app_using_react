@@ -1,5 +1,5 @@
 .main{
-    width: 22vw;
+    /* width: 20vw; */
     height: 100%;
 }
 
@@ -10,7 +10,6 @@
     padding: 0.5rem 0 0 1rem;
 }
 .container{
-    /* padding: 1.5rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +20,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: .4rem;
+    gap: 0.4rem;
     padding: 0.5rem 1.2rem;
     letter-spacing: 0.1em;
     margin: 1.5rem 0 .4rem 0;
@@ -30,8 +29,7 @@
     color: white;
     background-color: black;
     border-radius: 4rem;
-    cursor: pointer;
-    
+    cursor: pointer;   
     
     >.btnText{
         font-family: Roboto;
@@ -42,27 +40,35 @@
 .allGroups{
     height:84vh;
     overflow-y: scroll;
-    /* overflow-x: hidden; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: -2rem;
 }
 
-.group{
+/* .group{
     padding: 0.2rem;
-}
+} */
 
 .group,.select{
     margin-left: 4rem;
-    width: 22vw;
+    width: 20vw;
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.3rem;
     gap: 1.2rem;
     cursor: pointer;
 
     >.grpLogo,.selectgrpLogo{
+        height: 55px;
+        width: 55px;
         border-radius: 50%;
         color: white;
         font-size: 1.3rem;
-        padding: .8rem;
+        padding: .9rem;
+        text-align: center;
+        object-fit: contain;
     }
 
     >.grpName,.selectgrpName{
@@ -74,10 +80,9 @@
 }
 
 .select{
-    /* background: #F7ECDC; */
     box-sizing: content-box;
-    padding: 0.5rem;
-    border-radius: 1rem 0 0 1rem;
+    padding: 1rem;
+    border-radius: 2rem 0 0 2rem;
 }
 
 

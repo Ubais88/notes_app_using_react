@@ -10,6 +10,9 @@
     z-index: 1;
 }
 
+.border{
+    border: 1px solid red;
+}
 
 .content{
     display: flex;
@@ -90,4 +93,21 @@
         border-radius: 0.5rem;
         cursor: pointer;
     }
+}
+
+
+.inputErrContainer,.colorErrContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.error{
+    height: 0px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    color: #F81212;
+    margin-left: 3px;
+    margin-top: 3px;
 }
