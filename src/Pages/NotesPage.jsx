@@ -5,7 +5,7 @@ import NotesArea from '../Component/NotesArea.jsx'
 import Style from "../Styles/NotesPage.module.css"
 
 const NotesPage = () => {
-
+  
   const [selected , setSelected] = useState(true)
   const [selectedGroupColor , setSelectedGroupColor] = useState("")
   const [selectedGroupName , setSelectedGroupName] = useState("")
@@ -17,14 +17,14 @@ const NotesPage = () => {
           setSelectedGroupColor={setSelectedGroupColor} 
           setSelectedGroupName={setSelectedGroupName}
         />
-        {
+        {/* {
           selected ? 
           <LandingView /> : 
-          {/* <NotesArea 
+          <NotesArea 
             selectedGroupColor={selectedGroupColor} 
             selectedGroupName={selectedGroupName}
-          /> */}
-        }        
+          />
+        }         */}
     </div>
   )
 }
