@@ -1,13 +1,3 @@
-.main{
-    /* width: 20vw; */
-    height: 100%;
-}
-@media (max-width: 480px) {
-    .main{
-        height: 100vh;
-
-    }
-  }
 
 .heading{
     font-family: Roboto;
@@ -101,3 +91,42 @@
     background: transparent;
 }
 
+
+
+@media (max-width: 480px) {  
+    .heading{
+        font-family: Roboto;
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: 0.5rem 0 0 1rem;
+    }  
+    .creategrpbtn{
+        gap: 0.8rem;
+        padding: 0.8rem 3rem;
+        letter-spacing: 0.2em;
+        margin: 1.5rem auto;       
+        >.btnText{
+            font-size: 1.3rem;
+        }
+    }
+    
+    .allGroups{
+        width: 100vw;
+        overflow-x: hidden;
+        margin-left: 0rem;
+    } 
+    
+    .group,.select{
+        margin-left: 1rem;
+        width: 100%;
+        gap: 2.2rem;   
+        >.grpLogo,.selectgrpLogo{
+            height: 4rem;
+            width: 4rem;
+            font-size: 1.8rem;
+        }   
+        >.grpName,.selectgrpName{
+            font-size: 1.4rem;
+        }
+    }
+}
