@@ -45,13 +45,10 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
             date: currentDate(),
             message: note,
         }
-        {
-            newMsg.message.length !==0 && 
-            (
-                setNewNote([newMsg,...newNote]),
-                localStorage.setItem(selectedGroupName , JSON.stringify([newMsg,...newNote])),
-                setNote("")
-            )
+        if(newMsg.message.length !==0){             
+            setNewNote([newMsg,...newNote])
+            localStorage.setItem(selectedGroupName , JSON.stringify([newMsg,...newNote]))
+            setNote("")
         }
     }
 

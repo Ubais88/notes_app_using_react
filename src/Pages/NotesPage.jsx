@@ -17,14 +17,14 @@ const NotesPage = () => {
           setSelectedGroupColor={setSelectedGroupColor} 
           setSelectedGroupName={setSelectedGroupName}
         />
-        {/* {
+        {
           selected ? 
           <LandingView /> : 
           <NotesArea 
             selectedGroupColor={selectedGroupColor} 
             selectedGroupName={selectedGroupName}
           />
-        }         */}
+        }        
     </div>
   )
 }
