@@ -20,8 +20,8 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
         let minutes = time.getMinutes();
         let ampm = hours >= 12 ? 'Pm' : 'Am';
         { 
-            hours > 12 && (hours = hours - 12) ,
-            hours < 10 && (hours = "0"+hours) ,
+            hours > 12 && (hours = hours - 12) 
+            hours < 10 && (hours = "0"+hours) 
             minutes < 10 && (minutes = "0"+minutes) 
         }      
         return `${hours}:${minutes} ${ampm}`
