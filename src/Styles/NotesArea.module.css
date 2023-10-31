@@ -3,7 +3,7 @@
 }
 
 .nav{
-    height: 11vh;
+    height: 13vh;
     background: #E8E8E8;
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@
 .prevNotes{
     background-color: antiquewhite;
     height: 65vh;
-    overflow-y: auto;
+    overflow-y: scroll;
     /* scrollbar-track-color: #f2f2f2; */
 
     >.table{
@@ -102,17 +102,52 @@ textarea,textarea::placeholder{
 }
 
 
-
-
 .prevNotes::-webkit-scrollbar {
-    width: 10px;
+    width: 0.5rem;
 }
-  
 .prevNotes::-webkit-scrollbar-thumb {
-    background-color: rgb(246, 208, 158);
+    background-color: rgb(250, 199, 132);
     border-radius: 5px;
 }
-  
 .prevNotes::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+    background-color: transparent;
+}
+
+
+
+@media (max-width: 480px) {
+    .main{
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
+    
+    .nav{
+        height: 9vh;
+        gap: 0.8rem;      
+        >.logo{
+            height: 3rem;
+            width: 3rem;
+            font-size: 1.4rem;
+            margin-left: 0rem;
+        }   
+        >.logoText{
+            font-size: 1.5rem;
+        }
+    }  
+    .prevNotes{
+        height: 70vh;
+        overflow-y: scroll;
+    }
+    
+    .footer{
+        width: 100%;
+        height: 20.5vh;
+    }
+    
+    .sendicon{
+        position: relative;
+        bottom: 5vh;
+        left: 84vw;
+    }
 }

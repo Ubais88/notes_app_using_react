@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Style from "../Styles/NotesArea.module.css"
 import {IoSendSharp} from "react-icons/io5"
+import {BiArrowBack} from 'react-icons/bi'
 
-const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
+const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected }) => {
     // for typing 
     const [note , setNote] = useState("");
 
@@ -54,7 +55,7 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-          e.preventDefault(); // Prevent the Enter key from adding a newline
+          e.preventDefault(); // Prevent the Enter key from adding a newline 
           handleOnSave();
         }
       };
@@ -63,11 +64,19 @@ const NotesArea = ({selectedGroupColor , selectedGroupName}) => {
         const savedNotes = JSON.parse(localStorage.getItem(selectedGroupName)) || [];
         setNewNote(savedNotes);
     }, [selectedGroupName])
-    
+
+    const windowWidth = window.innerWidth;
+    // console.log("curent size ",windowWidth)
 
   return (
     <div className={Style.main}>
         <nav className={Style.nav}>
+            {
+                windowWidth <= 480 && <BiArrowBack size={30} style={{marginLeft:".5rem", marginRight:"0"}} onClick={() => setSelected(true)} />
+            }
+            {/* {
+                mobileview === false && <BiArrowBack size={30} style={{marginLeft:"0.5rem", marginRight:"0"}} onClick={() => setMobileview(true)} />
+            } */}
             <div 
                 className={Style.logo}
                 style={{ backgroundColor: selectedGroupColor}}

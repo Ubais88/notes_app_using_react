@@ -3,7 +3,7 @@ import Style from "../Styles/SideBar.module.css"
 import {FaPlus} from "react-icons/fa"
 import Modal from './Modal'
 
-const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName}) => {
+const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName , setMobileview}) => {
   const [modalOpen , setModalOpen] = useState(false);
   const [groupData , setGroupData] = useState(localStorage.getItem("groupData") || []);
   const [showData, setShowData] = useState([]);
@@ -53,6 +53,7 @@ const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName}) =
                       setSelected(false);
                       setSelectedGroupColor(names[0].colorName); 
                       setSelectedGroupName(names[0].groupName);
+                      // setMobileview(false);
                     }
                   } 
                   style={{backgroundColor: selectedItem === index ? '#F7ECDC': 'transparent'}} 

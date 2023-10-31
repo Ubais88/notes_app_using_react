@@ -2,9 +2,17 @@
     display: flex;
 }
 
+.mobile{
+    display: none;
+}
+
 @media (max-width: 480px) {
     .main{
-        display: flex;
-        flex-direction: column;
+        display: none;
     }
-  }
+    .mobile{
+        display: block;
+    } 
+}
+
+
