@@ -94,7 +94,9 @@ const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected, unique
                                             <p>{chat.date}</p>
                                         </div>
                                     </td>
-                                    <td className={Style.rowData}>{chat.message}</td>
+                                    <td className={Style.rowData}>
+                                        <div className={Style.wrap}>{chat.message}</div>
+                                    </td>
                                 </tr>
                             ))
                         )

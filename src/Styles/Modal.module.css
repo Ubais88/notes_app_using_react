@@ -119,6 +119,8 @@
     }
     .content{
         padding: .5rem 1rem;
+        margin: 0 0.5rem;
+        gap: 0.7rem;
     }
     .heading{
         letter-spacing: 0em;
@@ -127,7 +129,7 @@
         margin: 0rem;
     }
     .inputContainer ,.colorContainer{
-        gap: 1rem;
+        gap: 0.3rem;
     }
     .name,.colortext{
         font-size: 1rem;
@@ -139,8 +141,18 @@
     }
     .colors{   
         >*{
-            height: 30px;
-            width: 30px;
+            height: 1.87rem;
+            width: 1.87rem;
+        }
+    }
+
+    .btncontainer{
+        justify-content: center;
+        align-items: center;
+        margin-top: .5rem;
+        .btn{
+            padding: 0.5rem 3rem;
+            letter-spacing: 0.05em;
         }
     }
 }
