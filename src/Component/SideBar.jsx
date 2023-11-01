@@ -3,14 +3,12 @@ import Style from "../Styles/SideBar.module.css"
 import {FaPlus} from "react-icons/fa"
 import Modal from './Modal'
 
-const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName , setMobileview}) => {
+const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName , setUniqueKey}) => {
   const [modalOpen , setModalOpen] = useState(false);
   const [groupData , setGroupData] = useState(localStorage.getItem("groupData") || []);
   const [showData, setShowData] = useState([]);
   const [selectedItem , setSelectedItem] = useState('')
   
-  
-
   useEffect(() => {
     const prevSaved = localStorage.getItem("groupData");
     {
@@ -24,6 +22,7 @@ const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName , s
         const groupdetails = JSON.parse(localStorage.getItem("groupData"))
         const result = Object.keys(groupdetails).map((key) => [groupdetails[key]]);
         setShowData(result)
+        setSelectedItem(selectedItem+1)
       }}
       Data();
   },[groupData])
@@ -34,11 +33,12 @@ const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName , s
       <p className={Style.heading}>Pocket Notes</p>
 
       <div className={Style.container}>
-
+        <div className={Style.btn_Cont}>
         <button className={Style.creategrpbtn} onClick={()=>setModalOpen(!modalOpen)}>
           <FaPlus size={14} />
           <p className={Style.btnText}>Create Notes Group</p>
         </button>
+        </div>
 
         <div className={Style.allGroups}>
           { 
@@ -53,7 +53,7 @@ const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName , s
                       setSelected(false);
                       setSelectedGroupColor(names[0].colorName); 
                       setSelectedGroupName(names[0].groupName);
-                      // setMobileview(false);
+                      setUniqueKey(names[0].uniqueKey)
                     }
                   } 
                   style={{backgroundColor: selectedItem === index ? '#F7ECDC': 'transparent'}} 

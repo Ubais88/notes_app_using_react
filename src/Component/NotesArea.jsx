@@ -3,15 +3,13 @@ import Style from "../Styles/NotesArea.module.css"
 import {IoSendSharp} from "react-icons/io5"
 import {BiArrowBack} from 'react-icons/bi'
 
-const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected }) => {
+const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected, uniqueKey }) => {
     // for typing 
     const [note , setNote] = useState("");
-
     // for display messages
     const [newNote , setNewNote] = useState([]);
-
     const time = new Date();
-
+    console.log(selectedGroupColor)
     const handleOnChange = (e) => {
         setNote(e.target.value);
     }
@@ -39,16 +37,15 @@ const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected }) => {
           ];
         return `${day} ${monthNames[month]} ${year}`
     }
-
     const handleOnSave = () => {
         const newMsg = {
             time: currentTime(),
             date: currentDate(),
             message: note,
         }
-        if(newMsg.message.length !==0){             
+        if(newMsg.message.trim().length !== 0){             
             setNewNote([newMsg,...newNote])
-            localStorage.setItem(selectedGroupName , JSON.stringify([newMsg,...newNote]))
+            localStorage.setItem(uniqueKey , JSON.stringify([newMsg,...newNote]))
             setNote("")
         }
     }
@@ -61,9 +58,9 @@ const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected }) => {
       };
 
     useEffect(() => {
-        const savedNotes = JSON.parse(localStorage.getItem(selectedGroupName)) || [];
+        const savedNotes = JSON.parse(localStorage.getItem(uniqueKey)) || [];
         setNewNote(savedNotes);
-    }, [selectedGroupName])
+    }, [selectedGroupName , uniqueKey])
 
   return (
     <div className={Style.main}>

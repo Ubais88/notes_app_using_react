@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Style from "../Styles/Modal.module.css"
+import { v4 as uuidv4 } from 'uuid';
 
 const Modal = ({setModalOpen, groupData, setGroupData}) => {
 
@@ -25,19 +26,17 @@ const Modal = ({setModalOpen, groupData, setGroupData}) => {
         setcolorname(e.target.style.backgroundColor)
         setError({})
     }
-
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("name length: " ,name.length)
         const newError = {};
         if( name.length >=2 && colorname ){
-            const newData = { groupName: name ,colorName:colorname }
+            const uniqueKey = uuidv4();
+            const newData = { groupName: name ,uniqueKey:uniqueKey ,colorName:colorname }
             setGroupData([newData , ...groupData])
             localStorage.setItem(
                 "groupData",
                 JSON.stringify([newData , ...groupData])
             );
-            // console.log("clicked",groupData); 
             setModalOpen(false)
         }
         else{
@@ -46,7 +45,7 @@ const Modal = ({setModalOpen, groupData, setGroupData}) => {
         }
         { Object.keys(newError).length && setError(newError) }
     }
-    console.log(error)
+
 
   return (
     <div 

@@ -7,8 +7,9 @@ import Style from "../Styles/NotesPage.module.css"
 const NotesPage = () => {
   
   const [selected , setSelected] = useState(true)
-  const [selectedGroupColor , setSelectedGroupColor] = useState("red")
-  const [selectedGroupName , setSelectedGroupName] = useState("Ubais")
+  const [selectedGroupColor , setSelectedGroupColor] = useState("");
+  const [selectedGroupName , setSelectedGroupName] = useState("");
+  const [uniqueKey , setUniqueKey] = useState("");
 
 
   return (
@@ -18,6 +19,7 @@ const NotesPage = () => {
             setSelected={setSelected} 
             setSelectedGroupColor={setSelectedGroupColor} 
             setSelectedGroupName={setSelectedGroupName}
+            setUniqueKey={setUniqueKey}
           />
           {
             selected ? 
@@ -25,6 +27,7 @@ const NotesPage = () => {
             <NotesArea 
               selectedGroupColor={selectedGroupColor} 
               selectedGroupName={selectedGroupName}
+              uniqueKey={uniqueKey}
             />
           }        
 
@@ -37,11 +40,13 @@ const NotesPage = () => {
             setSelected={setSelected} 
             setSelectedGroupColor={setSelectedGroupColor} 
             setSelectedGroupName={setSelectedGroupName}
+            setUniqueKey={setUniqueKey}
           /> :
         <NotesArea 
           selectedGroupColor={selectedGroupColor} 
           selectedGroupName={selectedGroupName}
           setSelected={setSelected} 
+          uniqueKey={uniqueKey}
         />
       }
       </div>
