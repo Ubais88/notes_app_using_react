@@ -94,11 +94,14 @@ textarea,textarea::placeholder{
 
 .sendicon{
     position: absolute;
-    bottom: 6.4vh;
-    right: 1.6vw;
+    bottom: 4vh;
+    left: 96vw;
     cursor: pointer;
     color: #ABABAB;
     
+}
+.backbtn{
+    display: none;
 }
 
 
@@ -120,8 +123,7 @@ textarea,textarea::placeholder{
         width: 100%;
         height: 100%;
         overflow-x: hidden;
-    }
-    
+    }   
     .nav{
         height: 9vh;
         gap: 0.8rem;      
@@ -143,11 +145,14 @@ textarea,textarea::placeholder{
     .footer{
         width: 100%;
         height: 20.5vh;
-    }
-    
+    }   
     .sendicon{
         position: relative;
         bottom: 5vh;
         left: 84vw;
+    }
+
+    .backbtn{
+        display: block;
     }
 }

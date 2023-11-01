@@ -9,7 +9,6 @@ const NotesPage = () => {
   const [selected , setSelected] = useState(true)
   const [selectedGroupColor , setSelectedGroupColor] = useState("red")
   const [selectedGroupName , setSelectedGroupName] = useState("Ubais")
-  // const [mobileview  ,setMobileview] = useState(true)
 
 
   return (
@@ -38,14 +37,11 @@ const NotesPage = () => {
             setSelected={setSelected} 
             setSelectedGroupColor={setSelectedGroupColor} 
             setSelectedGroupName={setSelectedGroupName}
-            // setMobileview={setMobileview}
           /> :
         <NotesArea 
           selectedGroupColor={selectedGroupColor} 
           selectedGroupName={selectedGroupName}
           setSelected={setSelected} 
-          // setMobileview={setMobileview}
-          // mobileview={mobileview}
         />
       }
       </div>

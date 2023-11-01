@@ -65,18 +65,15 @@ const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected }) => {
         setNewNote(savedNotes);
     }, [selectedGroupName])
 
-    const windowWidth = window.innerWidth;
-    // console.log("curent size ",windowWidth)
-
   return (
     <div className={Style.main}>
         <nav className={Style.nav}>
-            {
-                windowWidth <= 480 && <BiArrowBack size={30} style={{marginLeft:".5rem", marginRight:"0"}} onClick={() => setSelected(true)} />
-            }
-            {/* {
-                mobileview === false && <BiArrowBack size={30} style={{marginLeft:"0.5rem", marginRight:"0"}} onClick={() => setMobileview(true)} />
-            } */}
+            <BiArrowBack 
+                size={30} 
+                style={{marginLeft:".5rem", marginRight:"0"}}
+                className={Style.backbtn} 
+                onClick={() => setSelected(true)} 
+            />
             <div 
                 className={Style.logo}
                 style={{ backgroundColor: selectedGroupColor}}
