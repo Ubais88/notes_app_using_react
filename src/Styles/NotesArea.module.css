@@ -11,8 +11,8 @@
 
 
     >.logo{
-        height: 55px;
-        width: 55px;
+        min-height: 3.43rem;
+        min-width: 3.43rem;
         border-radius: 50%;
         color: white;
         font-size: 1.7rem;
@@ -21,13 +21,15 @@
         justify-content: center;
         margin-left: 1rem;
     }
-
-    >.logoText{
-        font-family: Roboto;
-        font-size: 1.2rem;
-        font-weight: 500;
-        line-height: 1.5rem;
+    >.data{
+        >.logoText{
+            font-family: Roboto;
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.5rem;
+        }
     }
+
 }
 
 
@@ -121,16 +123,19 @@ textarea,textarea::placeholder{
 }
 
 
-
-@media (max-width: 480px) {
+@media screen and (min-width: 370px) and (max-width: 480px) {
     .main{
         width: 100%;
         height: 100%;
-        overflow-x: hidden;
-    }   
+        overflow: hidden;
+    }  
+
     .nav{
         height: 9vh;
+        width: 100%;
         gap: 0.8rem; 
+        overflow: auto;
+        justify-content: flex-start;
 
         >.logo{
             height: 3rem;
@@ -138,11 +143,16 @@ textarea,textarea::placeholder{
             font-size: 1.4rem;
             margin-left: 0rem;
         }   
-        >.logoText{
-            font-size: 1.5rem;
+        >.data{
+            width: 90%;
+            >.logoText{
+                font-size: 1.5rem;
+                overflow-y: scroll;
+            }
         }
-    }  
-    
+        
+    }
+
     .prevNotes{
         height: 70vh; 
     }
@@ -150,10 +160,11 @@ textarea,textarea::placeholder{
         gap: 1rem;
     }
     .wrap{
-        width: 55vw;
+        width: 51vw;
         overflow-x: hidden;
         overflow-y: scroll;
     }
+
     .footer{
         width: 100%;
         height: 20.5vh;
@@ -163,7 +174,51 @@ textarea,textarea::placeholder{
         bottom: 5vh;
         left: 84vw;
     }
+    .back{
+        width: 50px;
+    }
 
+    .backbtn{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 370px){ 
+    .nav{
+        height: 9vh;
+        width: 100%;
+        gap: 0.8rem; 
+        overflow: auto;
+        >.logo{
+            height: 2.5rem;
+            width: 2.5rem;
+            font-size: 1.2rem;
+            margin-left: 0rem;
+        } 
+        >.data{
+            width: 60vw;
+            >.logoText{
+                font-size: 1.5rem;
+                overflow-y: scroll;
+            }
+        }  
+    }   
+    .prevNotes{
+        height: 70vh; 
+    }
+    .row{
+        gap: 0rem;
+    }
+    .wrap{
+        width: 42vw;
+        overflow-y: scroll;
+    } 
+
+    .sendicon{
+        position: relative;
+        bottom: 4vh;
+        left: 82vw;
+    }
     .backbtn{
         display: block;
     }

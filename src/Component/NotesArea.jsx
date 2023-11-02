@@ -9,7 +9,7 @@ const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected, unique
     // for display messages
     const [newNote , setNewNote] = useState([]);
     const time = new Date();
-    console.log(selectedGroupColor)
+    // console.log(selectedGroupColor)
     const handleOnChange = (e) => {
         setNote(e.target.value);
     }
@@ -19,7 +19,8 @@ const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected, unique
         let minutes = time.getMinutes();
         let ampm = hours >= 12 ? 'Pm' : 'Am';
         { 
-            hours > 12 && (hours = hours - 12) 
+            hours > 12 && (hours -=  12) 
+            hours === 0 && ( hours = 12)
             hours < 10 && (hours = "0"+hours) 
             minutes < 10 && (minutes = "0"+minutes) 
         }      
@@ -65,19 +66,24 @@ const NotesArea = ({selectedGroupColor , selectedGroupName , setSelected, unique
   return (
     <div className={Style.main}>
         <nav className={Style.nav}>
-            <BiArrowBack 
-                size={30} 
-                style={{marginLeft:".5rem", marginRight:"0"}}
-                className={Style.backbtn} 
-                onClick={() => setSelected(true)} 
-            />
+            <div className={Style.back}>
+                <BiArrowBack 
+                    size={30}
+                    style={{marginLeft:".5rem", marginRight:"0"}}
+                    className={Style.backbtn} 
+                    onClick={() => setSelected(true)} 
+                />
+            </div>
             <div 
                 className={Style.logo}
                 style={{ backgroundColor: selectedGroupColor}}
             >
                 <p className={Style.logoletter}>{selectedGroupName.slice(0,2).toUpperCase()}</p>
             </div>
-            <p className={Style.logoText}>{selectedGroupName}</p>
+            <div className={Style.data}>
+                <p className={Style.logoText}>{selectedGroupName}</p>
+            </div>
+            
         </nav>
 
         <div className={Style.prevNotes}>

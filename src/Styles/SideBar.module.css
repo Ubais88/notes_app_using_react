@@ -11,11 +11,6 @@
     align-items: center;
 }
 
-/* .btn_Cont{
-    box-sizing: border-box;
-    padding: 0 2rem;
-} */
-
 .creategrpbtn{
     box-sizing: border-box;
     display: flex;
@@ -46,22 +41,21 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    /* margin-left: -3rem; */
 }
 
 
-.group,.select{
-    margin-left: 1rem;
-    width: 16.27vw;
+.select{
+    margin-left: 0.5rem;
+    width: 18.17vw;
     display: flex;
     align-items: center;
     margin-top: 0.3rem;
-    gap: 1.2rem;
+    gap: 1rem;
     cursor: pointer;
 
-    >.grpLogo,.selectgrpLogo{
-        height: 3.43rem;
-        width: 3.43rem;
+    >.grpLogo{
+        min-height: 3.43rem;
+        min-width: 3.43rem;
         border-radius: 50%;
         color: white;
         font-size: 1.5rem;
@@ -70,16 +64,17 @@
         justify-content: center;
     }
 
-    >.grpName,.selectgrpName{
+    >.grpName{
         font-family: Roboto;
         font-size: 1rem;
         font-weight: 500;
+        overflow-x: auto;
     }
 }
 
 .select{
     box-sizing: content-box;
-    padding: 0.9rem 1rem ;
+    padding: 0.8rem 0.5rem ;
     border-radius: 2rem 0 0 2rem;
 }
 
@@ -96,8 +91,10 @@
 }
 
 
-
-@media (max-width: 480px) {  
+@media screen and (min-width: 370px) and (max-width: 480px){
+    .main{
+        overflow: hidden ;
+    }
     .heading{
         font-size: 1.8rem;
         font-weight: 500;
@@ -116,20 +113,53 @@
     .allGroups{
         width: 100vw;
         overflow-x: hidden;
+        /* overflow-y: scroll; */
         margin-left: 0rem;
     } 
     
-    .group,.select{
+    .select{
         margin-left: 1rem;
         width: 100%;
-        gap: 2.2rem;   
-        >.grpLogo,.selectgrpLogo{
+        gap: 2rem;   
+        >.grpLogo{
             height: 4rem;
             width: 4rem;
             font-size: 1.8rem;
         }   
-        >.grpName,.selectgrpName{
+        >.grpName{
             font-size: 1.4rem;
+            /* overflow-x: auto; */
+        }
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 370px) {   
+    .creategrpbtn{
+        gap: 0.4rem;
+        padding: 0.5rem 1.3rem;
+        letter-spacing: 0.1em;       
+        >.btnText{
+            font-size: 1.2rem;
+        }
+    }
+    
+    .allGroups{
+        width: 100vw;
+        overflow-x: hidden;
+        margin-left: 0rem;
+    } 
+    
+    .select{
+        margin-left: 1rem;
+        width: 100%;
+        gap: 1rem;   
+        >.grpLogo{
+            height: 3.4rem;
+            width: 3.4rem;
+            font-size: 1.5rem;
+        }   
+        >.grpName{
+            font-size: 1.3rem;
         }
     }
 }

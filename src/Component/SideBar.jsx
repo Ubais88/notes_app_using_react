@@ -59,13 +59,15 @@ const SideBar = ({setSelected , setSelectedGroupColor , setSelectedGroupName , s
                   style={{backgroundColor: selectedItem === index ? '#F7ECDC': 'transparent'}} 
                 >
                   <div 
-                    className={Style.selectgrpLogo} 
+                    className={Style.grpLogo} 
                     style={{ backgroundColor: names[0].colorName}} 
                   >
                     <p>{names[0].groupName.slice(0,2).toUpperCase()}</p>
                   </div>
-                  <p className={Style.selectgrpName}>
-                    {names[0].groupName}
+                  <p className={Style.grpName}>
+                    {
+                      names[0].groupName.length >= 18 ? (names[0].groupName.slice(0,19)+'...') : (names[0].groupName)
+                    }
                   </p>
                 </div>
               ))
